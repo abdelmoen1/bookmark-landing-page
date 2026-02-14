@@ -1,0 +1,821 @@
+/* Reset box model عشان العرض يشمل padding و border */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* متغيرات ألوان المشروع */
+
+:root {
+    --Blue-600: hsl(231, 69%, 60%);
+    --Red-400: hsl(0, 94%, 66%);
+    --Grey-50: hsl(0, 0%, 97%);
+    --Blue-950: hsl(229, 31%, 21%);
+}
+
+/* سكرول ناعم عند الانتقال بين الأقسام */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* الخط الأساسي للموقع */
+
+body {
+    font-family: 'Rubik', Tahoma, sans-serif;
+}
+
+/* ======================
+   Layout Container
+====================== */
+
+/* حاوية عامة بتوسّط المحتوى */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0px auto;
+    position: relative;
+}
+
+/* عرض الحاوية في الشاشات الصغيرة */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* عرض الحاوية في الشاشات المتوسطة */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* عرض الحاوية في الشاشات الكبيرة */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* ======================
+   Header
+====================== */
+
+/* ترتيب عناصر الهيدر أفقياً */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* مسافة حول اللوقو */
+
+header .logo {
+    padding: 20px;
+}
+
+/* حجم أيقونة المينيو */
+
+header nav button:first-of-type img {
+    width: 20px;
+    cursor: pointer;
+}
+
+/* قائمة الروابط */
+
+header nav ul {
+    padding: 0;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    gap: 15px;
+}
+
+/* تنسيق روابط الهيدر */
+
+header nav a {
+    color: var(--Blue-950);
+    text-decoration: none;
+    padding: 10px;
+    transition: 0.3s ease;
+    font-size: 15px;
+}
+
+header nav a:hover {
+    color: var(--Red-400);
+}
+
+/* زر Login */
+
+header nav button {
+    border: 3px solid var(--Red-400);
+    background-color: var(--Red-400);
+    color: white;
+    padding: 10px 30px;
+    font-size: 15px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 0 5px 0px black;
+}
+
+header nav button:hover {
+    background-color: var(--Grey-50);
+    color: var(--Red-400);
+    box-shadow: 0 0 5px 0px var(--Blue-950);
+
+}
+
+/* القائمة المفتوحة في الموبايل */
+
+.open-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 25px;
+    background-color: hsl(229deg 31% 21% / 90%);
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    z-index: 1;
+}
+
+.open-menu li {
+    border-top: 1px solid rgba(255, 255, 255, 0.63);
+    padding: 17px 0;
+}
+
+.open-menu a {
+    color: white;
+}
+
+/* زر الموبايل */
+
+.open-menu button {
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+.header {
+    background-color: hsl(229deg 31% 21% / 90%);
+}
+
+.header-container {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+}
+
+.scroll-menu a {
+    color: white;
+}
+
+/* إخفاء القائمة في الموبايل */
+
+@media (max-width:650px) {
+    header nav ul {
+        display: none;
+    }
+
+}
+
+/* إخفاء زر المينيو في الديسكتوب */
+
+@media (min-width:650px) {
+    header nav span {
+        display: none;
+    }
+}
+
+/* ======================
+   Hero Section
+====================== */
+
+/* ترتيب صورة ونص الهيرو */
+.hero-section {
+    display: flex;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 51px;
+}
+
+.hero-text p {
+    width: 412px;
+    font-size: 17px;
+    color: #AAA;
+    line-height: 1.6;
+}
+
+/* أزرار الهيرو */
+
+.hero-text button {
+    border: 2px solid var(--Blue-600);
+    background-color: var(--Blue-600);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 3px 10px var(--Blue-600);
+}
+
+.hero-text button:last-of-type {
+    background-color: var(--Grey-50);
+    color: var(--Blue-950);
+    box-shadow: 0 4px 20px #AAA;
+    border-color: transparent;
+    margin-left: 10px;
+}
+
+.hero-text button:hover {
+    background-color: white;
+    color: var(--Blue-600);
+}
+
+.hero-text button:last-of-type:hover {
+    border: 2px solid var(--Blue-950);
+    color: var(--Blue-950);
+}
+
+.hero-img {
+    position: relative;
+}
+
+.hero-img img {
+    width: 100%;
+}
+
+/* خلفية شكل خلف الصورة */
+
+.hero-img::after {
+    content: '';
+    position: absolute;
+    width: 85%;
+    height: 80%;
+    background-color: var(--Blue-600);
+    right: 35px;
+    bottom: -50px;
+    z-index: -1;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+@media (max-width:992px) {
+    .hero-text h1 {
+        font-size: 33px;
+    }
+
+    .hero-text p {
+        width: 311px;
+        font-size: 12px;
+    }
+
+    .hero-text button {
+        font-size: 15px;
+    }
+}
+
+@media (max-width:650px) {
+    .hero-section {
+        display: block;
+        text-align: center;
+    }
+
+    .hero-text p {
+        margin: 20px auto;
+    }
+
+    .hero-img {
+        margin-top: 40px;
+    }
+
+    .hero-img::after {
+        right: 27px;
+    }
+}
+
+
+/* ======================
+   Features Section
+====================== */
+
+/* مسافات القسم */
+#features {
+    margin-bottom: 150px;
+    margin-top: 150px;
+    position: relative;
+}
+
+section:not( :last-child) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+/* عنوان القسم */
+
+.head-section-text {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.head-section-text h1 {
+    margin-bottom: 0;
+}
+
+.head-section-text p {
+    margin: 20px auto;
+    width: 440px;
+    line-height: 1.6;
+    color: #AAA;
+}
+
+/* التابات */
+
+.tabs ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    border-bottom: 1px solid #AAA;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.tabs ul li {
+    padding: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.tabs ul li:hover {
+    color: var(--Red-400);
+}
+
+/* التاب النشط */
+
+.tabs ul li.active {
+    border-bottom: 3px solid var(--Red-400);
+
+}
+
+.one-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    gap: 25px;
+}
+
+.one-tab img {
+    width: 50%;
+}
+
+.one-tab .tab-text p {
+    width: 350px;
+    line-height: 1.6;
+    color: #AAA;
+}
+
+.one-tab button {
+    background-color: var(--Blue-600);
+    border: 3px solid var(--Blue-600);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.one-tab button:hover {
+    background-color: var(--Grey-50);
+    color: var(--Blue-600);
+}
+
+#features::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10%;
+    background-color: var(--Blue-600);
+    width: 50%;
+    height: 45%;
+    border-bottom-right-radius: 50%;
+    z-index: -1;
+}
+
+/* إخفاء المحتوى */
+
+.hidden {
+    display: none;
+}
+
+@media (max-width:650px) {
+    .head-section-text p {
+        width: 300px;
+    }
+
+    .tabs ul {
+        display: block;
+        margin: 0;
+        width: 100%;
+        border: none;
+        text-align: center;
+    }
+
+    .tabs ul li {
+        border-bottom: 1px solid #AAA;
+    }
+
+    .one-tab {
+        display: block;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .tab-text p {
+        width: 100% !important;
+    }
+
+    .tab-text button {
+        display: none;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #features::after {
+        bottom: 22%;
+        height: 20%;
+        width: 70%;
+        border-bottom-right-radius: 100px;
+    }
+}
+
+/* ======================
+   Pricing Section
+====================== */
+
+/* Grid للكروت */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* تصميم الكرت */
+
+.one-card {
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 0 0px 11px 14px #EEE;
+    padding-top: 25px;
+}
+
+.one-card img:last-of-type {
+    width: 100%;
+}
+
+.one-card h2 {
+    margin-bottom: 5px;
+}
+
+.one-card p {
+    margin-top: 0;
+}
+
+/* زر الكرت */
+
+.one-card button {
+    border: 2px solid var(--Blue-600);
+    color: white;
+    background-color: var(--Blue-600);
+    padding: 10px;
+    width: 85%;
+    margin: 27px auto;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.one-card button:hover {
+    background-color: white;
+    color: var(--Blue-600);
+}
+
+.one-card:first-child {
+    transform: translateY(-30px);
+}
+
+.one-card:last-child {
+    transform: translateY(30px);
+}
+
+@media (max-width:650px) {
+    .cards {
+        padding: 0 35px;
+    }
+
+    .one-card {
+        width: 100%;
+    }
+}
+
+/* ======================
+   FAQ Section
+====================== */
+
+/* قائمة الأسئلة */
+.asks-menu {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    width: 600px;
+    margin: 20px auto;
+    font-size: 24px;
+}
+
+/* كل سؤال */
+
+.asks-menu li {
+    padding: 20px 15px;
+    border-bottom: 1px solid #AAA;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.asks-menu li:first-child {
+    border-top: 1px solid #AAA;
+}
+
+.asks-menu li:hover {
+    color: var(--Red-400);
+}
+
+.asks-menu li img {
+    float: right;
+    width: 20px;
+    position: relative;
+}
+
+.asks-menu .asks-content p {
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.asks-menu button {
+    width: 20%;
+    margin: 20px auto;
+    border: 2px solid var(--Blue-600);
+    color: white;
+    background-color: var(--Blue-600);
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+.asks-menu button:hover {
+    color: var(--Blue-600);
+    background-color: white;
+}
+
+/* تدوير السهم */
+
+.img-rotat {
+    transform: rotate(-180deg);
+}
+
+.img-back {
+    transform: rotate(0deg);
+}
+
+/* السؤال النشط */
+
+.asks-menu li.active-ask {
+    color: var(--Red-400);
+}
+
+@media (max-width:650px) {
+    .asks-menu {
+        width: 100%;
+        font-size: 14px;
+        padding: 0 20px;
+    }
+
+    .asks-menu button {
+        font-size: 15px;
+        width: 40%;
+    }
+}
+
+
+/* ======================
+   Contact Section
+====================== */
+
+/* خلفية قسم التواصل */
+.contact {
+    background-color: var(--Blue-600);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.contact .container {
+    margin: 20px auto;
+    width: 400px;
+}
+
+.contact span {
+    letter-spacing: 2px;
+}
+
+.contact form {
+    position: relative;
+}
+
+/* حقل الإدخال */
+
+.contact form input {
+    border: none;
+    padding: 13px 20px;
+    border-radius: 5px;
+}
+
+/* زر الإرسال */
+.contact form input:last-child {
+    background-color: var(--Red-400);
+    color: white;
+    border: 3px solid var(--Red-400);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.contact form input:last-child:hover {
+    background-color: white;
+    color: var(--Red-400);
+}
+
+.contact form input:focus {
+    outline: none;
+}
+
+.contact form img.error {
+    display: block;
+}
+
+.contact form img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(100%, -50%);
+    display: none;
+}
+
+/* رسالة الخطأ */
+
+.contact form span.error {
+    display: block;
+}
+
+.contact form span {
+    position: absolute;
+    width: fit-content;
+    bottom: -32px;
+    font-size: 11px;
+    left: 3px;
+    background-color: var(--Red-400);
+    padding: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: none;
+}
+
+.contact form input.error {
+    border: 3px solid var(--Red-400);
+}
+
+@media (max-width:500px) {
+    .contact .container {
+        width: 300px;
+    }
+
+    form {
+        display: grid;
+        gap: 10px;
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    form span {
+        bottom: 57px !important;
+        width: 110% !important;
+        left: 0 !important;
+        padding: 5px !important;
+    }
+
+    form img {
+        top: 20% !important;
+        left: 80% !important;
+    }
+
+    .contact form input.error {
+        margin-bottom: 19px;
+    }
+}
+
+@media (max-width:360px) {
+    .contact .container {
+        transform: translateX(-10%);
+    }
+}
+
+/* ======================
+   Footer
+====================== */
+
+/* ترتيب الفوتر */
+footer {
+    background-color: var(--Blue-950);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+footer img {
+    width: 70%;
+}
+
+footer nav {
+    display: flex;
+    align-items: center;
+}
+
+footer ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+footer ul li a i {
+    font-size: 20px;
+}
+
+/* روابط الفوتر */
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+/* تأثير hover */
+
+footer ul li a:hover {
+    color: var(--Red-400);
+}
+
+@media (max-width:650px) {
+    footer {
+        display: block;
+        text-align: center;
+    }
+
+    footer nav {
+        display: block;
+    }
+
+    footer img {
+        width: 45%;
+    }
+
+    footer nav ul {
+        display: grid;
+    }
+
+    footer .social-media-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 35px;
+    }
+}
