@@ -281,7 +281,7 @@ header nav button:hover {
     }
 
     .hero-text button {
-        font-size: 15px;
+        font-size: 12px;
     }
 }
 
@@ -366,7 +366,7 @@ section:not( :last-child) {
 
 .tabs ul li.active {
     border-bottom: 3px solid var(--Red-400);
-
+    color: var(--Red-400);
 }
 
 .one-tab {

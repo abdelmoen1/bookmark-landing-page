@@ -86,15 +86,15 @@
                 <!-- Tabs Navigation (Accessible Pattern) -->
                 <div class="tabs" role="tablist" aria-label="Feature Tabs">
                     <ul>
-                        <li class="active" aria-selected="true" aria-controls="simple" id="tab-simple">Simple
+                        <li class="active" aria-selected="true" aria-controls="simple" data-name="tab-simple">Simple
                             Bookmarking</li>
-                        <li role="tab" aria-selected="false" aria-controls="speed" id="tab-speed">Speedy Searching</li>
-                        <li role="tab" aria-selected="false" aria-controls="easy" id="tab-easy">Easy Sharing</li>
+                        <li role="tab" aria-selected="false" aria-controls="speed" data-name="tab-speed">Speedy Searching</li>
+                        <li role="tab" aria-selected="false" aria-controls="easy" data-name="tab-easy">Easy Sharing</li>
                     </ul>
                 </div>
                 <!-- Tabs Content -->
                 <div class="tabs-content">
-                    <div class="one-tab" id="simple" role="tabpanel" aria-labelledby="tab-simple">
+                    <div class="one-tab" id="tab-simple" role="tabpanel" aria-labelledby="tab-simple">
                         <img src="images/illustration-features-tab-1.svg" alt="Bookmark organization interface preview">
                         <div class="tab-text">
                             <h1>Bookmark in one click</h1>
@@ -104,7 +104,7 @@
                             <button type="button">More info</button>
                         </div>
                     </div>
-                    <div class="one-tab hidden" id="speed" role="tabpanel" aria-labelledby="tab-speed">
+                    <div class="one-tab hidden" id="tab-speed" role="tabpanel" aria-labelledby="tab-speed">
                         <img src="images/illustration-features-tab-2.svg" alt="Search functionality preview">
                         <div class="tab-text">
                             <h1>Intelligent search</h1>
@@ -114,7 +114,7 @@
                             <button type="button">More info</button>
                         </div>
                     </div>
-                    <div class="one-tab hidden" id="easy" role="tabpanel" aria-labelledby="tab-easy">
+                    <div class="one-tab hidden" id="tab-easy" role="tabpanel" aria-labelledby="tab-easy">
                         <img src="images/illustration-features-tab-3.svg" alt="Bookmark sharing interface preview">
                         <div class="tab-text">
                             <h1>Share your bookmarks</h1>
