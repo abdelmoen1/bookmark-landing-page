@@ -11,4 +11,4 @@ This project demonstrates skills in **HTML, CSS, and vanilla JavaScript** while 
 - Browser support: Chrome, Firefox, Opera
 
 ## Demo
-([Netlify-Live-Demo](https://bookmark-maneger.netlify.app/))
+([Bookmark Langing Page Live Demo](https://bookmark-maneger.netlify.app/))
